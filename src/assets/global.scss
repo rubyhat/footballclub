@@ -1,72 +1,72 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 
 :root {
-    --accent: #14b890;
-    --dark: #2c3030;
-    --dark-grey: #4e4e4e;
-    --medium-grey: #9a9c9c;
-    --text-color: #2c3030;
-    --light-grey: #f3f3f3;
-    --border-color: #e3e1e1;
-    --white: #fff;
-    --black-90: #222;
-    --black-80: #333;
-    --black-75: #3b3b3b;
-    --black-70: #4c4c4c;
-    --black-60: #666;
-    --black-50: #808080;
-    --black-40: #999;
-    --black-30: #b9b9b9;
-    --black-20: #cdcdcd;
-    --black-10: #e5e5e5;
-    --black-5: #f7f7f7;
-    --white: #fff;
-    --red: #d95151;
-    --blue: #096dd9;
-    --orange: #ff8a00;
+  --accent: #14b890;
+  --dark: #2c3030;
+  --dark-grey: #4e4e4e;
+  --medium-grey: #9a9c9c;
+  --text-color: #2c3030;
+  --light-grey: #f3f3f3;
+  --border-color: #e3e1e1;
+  --white: #fff;
+  --black-90: #222;
+  --black-80: #333;
+  --black-75: #3b3b3b;
+  --black-70: #4c4c4c;
+  --black-60: #666;
+  --black-50: #808080;
+  --black-40: #999;
+  --black-30: #b9b9b9;
+  --black-20: #cdcdcd;
+  --black-10: #e5e5e5;
+  --black-5: #f7f7f7;
+  --white: #fff;
+  --red: #d95151;
+  --blue: #096dd9;
+  --orange: #ff8a00;
 }
 
 #root,
 .app {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body,
 html {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 body {
-    font-size: 16px;
-    display: flex;
-    flex-direction: column;
-    color: var(--text-color);
-    padding: 0;
-    margin: 0;
-    font-family: "Roboto", "Helvetica", sans-serif;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-color);
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", "Helvetica", sans-serif;
 }
 
 ul,
 nav,
 p {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 li {
-    list-style: none;
+  list-style: none;
 }
 
 a {
+  text-decoration: none;
+  &:hover {
     text-decoration: none;
-    &:hover {
-        text-decoration: none;
-    }
+  }
 }
 
 h1,
@@ -75,43 +75,44 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 0;
-    color: var(--dark);
+  margin: 0;
+  color: var(--dark);
 }
 
 button {
-    background-color: transparent;
-    border: none;
-    font-size: 1rem;
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
 }
 
 article {
-    padding: 2rem 0;
+  padding: 2rem 0;
 }
 
 #root {
-    display: flex;
-    height: 100%;
-    white-space: pre-line;
+  display: flex;
+  height: 100%;
+  white-space: pre-line;
 }
 
 .wrapper {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .wrapper,
 .content {
-    flex-grow: 1;
-    position: relative;
+  flex-grow: 1;
+  position: relative;
 }
 
 .hide {
-    position: absolute;
-    left: -9999px;
-    top: -9999px;
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
 }
 
 .d-none {
-    display: none;
+  display: none;
 }
