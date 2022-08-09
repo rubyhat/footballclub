@@ -1,34 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { BrowserRouter as Router } from "react-router-dom";
+
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import RouteList from "./RouterList";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { Container } from "@mui/system";
+import { Suspense } from "react";
+
+const theme = createTheme({
+    palette: {
+        primary: {
+            main: "#14b890",
+            contrastText: "#ffffff",
+        },
+    },
+});
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    return (
+        <ThemeProvider theme={theme}>
+            <div className="wrapper">
+                <Router>
+                    <Header />
+                    <main className="content">
+                        <Container>
+                            <Suspense>
+                                <RouteList />
+                            </Suspense>
+                        </Container>
+                    </main>
+                    <Footer />
+                </Router>
+            </div>
+        </ThemeProvider>
+    );
 }
 
-export default App
+export default App;
