@@ -29,7 +29,7 @@ const StickMenu = () => {
           </Link>
         </li>
         <li className={cn("list-item")}>
-          <Link className={cn("link")} to="/">
+          <Link className={cn("link")} to="/login">
             <Button variant="contained">Вход</Button>
           </Link>
         </li>

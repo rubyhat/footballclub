@@ -3,10 +3,16 @@ import { Grid, Typography, Container, Box } from "@mui/material";
 import classNames from "classnames/bind";
 import styles from "./styles.module.scss";
 
-const Footer = () => {
+interface IProps {
+  isHome: boolean;
+}
+
+const Footer = (props: IProps) => {
+  const { isHome } = props;
   const cn = classNames.bind(styles);
+
   return (
-    <footer className={cn("footer")}>
+    <footer className={cn(["footer", isHome && "footer_extended-padding"])}>
       <Container>
         <Grid container spacing={2}>
           <Grid item xs={12}>

@@ -1,7 +1,12 @@
 .footer {
   border-top: 1px solid var(--black-20);
+  padding: 1rem 0;
+}
+
+.footer_extended-padding {
   padding: 1rem 0 77px 0;
 }
+
 .box {
   display: inline-flex;
 }

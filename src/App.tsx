@@ -1,4 +1,4 @@
-import { BrowserRouter as Router } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -18,21 +18,22 @@ const theme = createTheme({
 });
 
 function App() {
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+  console.log(location);
   return (
     <ThemeProvider theme={theme}>
       <div className="wrapper">
-        <Router>
-          <Header />
-          <main className="content">
-            <Container>
-              <Suspense>
-                <RouteList />
-              </Suspense>
-            </Container>
-          </main>
-          <StickMenu />
-          <Footer />
-        </Router>
+        <Header />
+        <main className="content">
+          <Container>
+            <Suspense>
+              <RouteList />
+            </Suspense>
+          </Container>
+        </main>
+        {isHome && <StickMenu />}
+        <Footer isHome={isHome} />
       </div>
     </ThemeProvider>
   );
