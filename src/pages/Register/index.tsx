@@ -1,22 +1,20 @@
 import { Box, Container, Grid } from "@mui/material";
-import React from "react";
-
-import LoginForm from "../../components/LoginForm";
+import RegisterForm from "../../components/RegisterForm";
 import LinkedText from "../../components/LinkedText";
 
-const Login = () => {
+const Register = () => {
   return (
     <article>
       <Container>
         <Grid container>
           <Grid item xs={12} md={4}>
-            <LoginForm />
+            <RegisterForm />
             <Box sx={{ pt: "0.5rem" }}>
               <LinkedText
-                link="/register"
-                linkText="Регистрация"
+                link="/login"
+                linkText="Авторизоваться"
                 variant="accent"
-                text="Нет аккаунта?"
+                text="Уже есть аккаунт?"
               />
             </Box>
           </Grid>
@@ -26,4 +24,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

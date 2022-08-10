@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import Register from "../pages/Register";
 
 // const Register = React.lazy(() => import("../pages/Register"));
 const Login = React.lazy(() => import("../pages/Login"));
@@ -23,7 +24,7 @@ const RouterList = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
-      {/* <Route path="/reg" element={<Register />} /> */}
+      <Route path="/register" element={<Register />} />
       <Route path="/no-auth" element={<NoAuth />} />
       <Route
         path="/test"
