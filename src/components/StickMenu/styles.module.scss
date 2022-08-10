@@ -1,11 +1,23 @@
 .nav {
-  width: 100%;
   position: fixed;
   bottom: 0;
-  padding: 0.5rem;
+  padding: 0.5rem 2.5rem;
   border-top: 1px solid var(--black-10);
   background-color: var(--white);
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+  margin: 1rem auto;
+  margin-left: calc(50% - 157px);
+  border-radius: 0.25rem;
+  @media (max-width: 576px) {
+    width: 100%;
+    margin: 0;
+    padding: 0.5rem;
+    border-radius: 0;
+  }
+}
+
+.nav_extended-bottom {
+  bottom: 65px;
 }
 
 .list {

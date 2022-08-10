@@ -1,4 +1,5 @@
 import { Grid, Typography, Container, Box } from "@mui/material";
+import { isMobile } from "react-device-detect";
 
 import classNames from "classnames/bind";
 import styles from "./styles.module.scss";
@@ -12,7 +13,12 @@ const Footer = (props: IProps) => {
   const cn = classNames.bind(styles);
 
   return (
-    <footer className={cn(["footer", isHome && "footer_extended-padding"])}>
+    <footer
+      className={cn([
+        "footer",
+        isHome && isMobile && "footer_extended-padding",
+      ])}
+    >
       <Container>
         <Grid container spacing={2}>
           <Grid item xs={12}>

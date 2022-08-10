@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { isMobile } from "react-device-detect";
 
-import { Box, Button } from "@mui/material";
+import { Button } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 
 import classNames from "classnames/bind";
@@ -10,7 +11,7 @@ import styles from "./styles.module.scss";
 const StickMenu = () => {
   const cn = classNames.bind(styles);
   return (
-    <nav className={cn("nav")}>
+    <nav className={cn(["nav", !isMobile && "nav_extended-bottom"])}>
       <ul className={cn("list")}>
         <li className={cn("list-item")}>
           <Link className={cn("link")} to="/">
