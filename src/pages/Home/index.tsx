@@ -1,7 +1,12 @@
 import React from "react";
+import CardGame from "../../components/CardGame";
 
 const Home = () => {
-  return <div>Home page</div>;
+  return (
+    <div>
+      <CardGame />
+    </div>
+  );
 };
 
 export default Home;

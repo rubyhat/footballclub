@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
@@ -12,8 +13,8 @@ import {
 
 import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
+
 import validationSchema from "./validationSchema";
-import { useState } from "react";
 
 type FormValues = {
   email: string;
