@@ -22,7 +22,7 @@ const StickMenu = () => {
           <Link
             className={cn("link")}
             style={{ display: "inline-block", padding: "0.25rem" }}
-            to="/"
+            to="/g/new"
           >
             <Button variant="contained">
               <AddIcon sx={{ fill: "white" }} fontSize="medium" />
