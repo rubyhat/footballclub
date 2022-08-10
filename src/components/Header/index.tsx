@@ -1,5 +1,6 @@
 import { AppBar, Toolbar, Typography, Box, Container } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
+import SportsSoccerIcon from "@mui/icons-material/SportsSoccer";
 
 import classNames from "classnames/bind";
 import styles from "./styles.module.scss";
@@ -13,7 +14,8 @@ const Header = () => {
       <Container>
         <Toolbar>
           <Typography variant="h6" component={"span"} sx={{ flexGrow: 1 }}>
-            <Link style={{ color: "white" }} to="/">
+            <Link className={cn("link")} to="/">
+              <SportsSoccerIcon />
               Football App
             </Link>
           </Typography>

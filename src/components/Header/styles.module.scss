@@ -7,3 +7,12 @@
   align-items: center;
   justify-content: center;
 }
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--white);
+  svg {
+    margin-right: 0.5rem;
+  }
+}
