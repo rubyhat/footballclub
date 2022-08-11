@@ -6,9 +6,11 @@ import classNames from "classnames/bind";
 import styles from "./styles.module.scss";
 
 import { Link } from "react-router-dom";
+import { useUser } from "../../store/user";
 
 const Header = () => {
   const cn = classNames.bind(styles);
+  const isAuth = useUser((state) => state.isAuth);
   return (
     <AppBar position="static">
       <Container>
@@ -19,9 +21,11 @@ const Header = () => {
               Football App
             </Link>
           </Typography>
-          <Box className={cn("avatar")}>
-            <PersonIcon />
-          </Box>
+          {isAuth && (
+            <Box className={cn("avatar")}>
+              <PersonIcon />
+            </Box>
+          )}
         </Toolbar>
       </Container>
     </AppBar>

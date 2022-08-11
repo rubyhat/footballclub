@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import { useUser } from "../store/user";
 
 const ProtectedRoute = React.lazy(() => import("./ProtectedRoute"));
 const Register = React.lazy(() => import("../pages/Register"));
@@ -8,7 +9,7 @@ const Home = React.lazy(() => import("../pages/Home"));
 const GameCreate = React.lazy(() => import("../pages/GameCreate"));
 
 const RouterList = () => {
-  const isAuth = true;
+  const isAuth = useUser((state) => state.isAuth);
 
   const Testt = () => {
     return <div>testing</div>;

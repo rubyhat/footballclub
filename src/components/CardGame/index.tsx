@@ -22,6 +22,7 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
 import ListWithAvatar from "../ListWithAvatar";
+import { useUser } from "../../store/user";
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
@@ -48,18 +49,19 @@ const CardGame = () => {
 
   const userName = "userName";
 
+  const isAuth = useUser((state) => state.isAuth);
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardHeader
         avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            R
-          </Avatar>
+          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe"></Avatar>
         }
         action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
+          isAuth && (
+            <IconButton aria-label="settings">
+              <MoreVertIcon />
+            </IconButton>
+          )
         }
         title={`Организатор: ${userName}`}
         subheader="Дата матча: 10.08.2022 | 20:00"

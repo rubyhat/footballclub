@@ -7,6 +7,8 @@ import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
 
 import validationSchema from "./validationSchema";
+import { useUser } from "../../store/user";
+import { useNavigate } from "react-router-dom";
 
 type FormValues = {
   phone: string;
@@ -22,10 +24,16 @@ const LoginForm = () => {
     formState: { errors },
     handleSubmit,
   } = useForm<FormValues>({ resolver: yupResolver(validationSchema) });
+  const navigate = useNavigate();
 
   const cn = classNames.bind(styles);
 
-  const onSubmit = handleSubmit((data) => console.log(data));
+  const setIsAuth = useUser((state) => state.setIsAuth);
+  const onSubmit = handleSubmit((data) => {
+    console.log(data);
+    setIsAuth(true);
+    navigate("/", { replace: true });
+  });
 
   return (
     <form className={cn(["form"])} onSubmit={onSubmit}>

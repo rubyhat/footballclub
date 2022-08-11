@@ -20,7 +20,6 @@ const theme = createTheme({
 function App() {
   const location = useLocation();
   const isHome = location.pathname === "/";
-  console.log(location);
   return (
     <ThemeProvider theme={theme}>
       <div className="wrapper">
