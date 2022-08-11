@@ -6,7 +6,6 @@ import {
   ListItemText,
   ListItemAvatar,
   Avatar,
-  Typography,
 } from "@mui/material";
 
 const ListWithAvatar = () => {

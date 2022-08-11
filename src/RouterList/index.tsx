@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { useUser } from "../store/user";
 
 const ProtectedRoute = React.lazy(() => import("./ProtectedRoute"));
+const UserProfile = React.lazy(() => import("../pages/UserProfile"));
 const Register = React.lazy(() => import("../pages/Register"));
 const Login = React.lazy(() => import("../pages/Login"));
 const Home = React.lazy(() => import("../pages/Home"));
@@ -24,6 +25,7 @@ const RouterList = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/u/userName" element={<UserProfile />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/no-auth" element={<NoAuth />} />
