@@ -23,6 +23,7 @@ import styles from "./styles.module.scss";
 import classNames from "classnames/bind";
 import ListWithAvatar from "../ListWithAvatar";
 import { useUser } from "../../store/user";
+import CardGameMenu from "../CardGameMenu";
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
@@ -40,8 +41,14 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 }));
 
 const CardGame = () => {
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [expanded, setExpanded] = React.useState(false);
   const cn = classNames.bind(styles);
+  const open = Boolean(anchorEl);
+
+  const handleMenuClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -52,13 +59,14 @@ const CardGame = () => {
   const isAuth = useUser((state) => state.isAuth);
   return (
     <Card sx={{ maxWidth: 345 }}>
+      <CardGameMenu anchorEl={anchorEl} setAnchorEl={setAnchorEl} open={open} />
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe"></Avatar>
         }
         action={
           isAuth && (
-            <IconButton aria-label="settings">
+            <IconButton onClick={handleMenuClick} aria-label="settings">
               <MoreVertIcon />
             </IconButton>
           )
