@@ -4,9 +4,12 @@ App for me and my friends, where we control our football games
 
 ## Used
 
--   Typescript
--   React
--   React-router-dom
--   Zustand
--   Vite
--   MUI
+- Typescript
+- React
+- Zustand
+- Jest
+- Vite
+- MUI
+- React-router-dom
+- React-hook-form
+- Yup
